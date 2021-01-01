@@ -53,6 +53,56 @@ def main():
     print(XRP_exchange.retrieve_coin_from_dollar(fake_dollar_amount))
 
 
+def calc_binance_withdrawals(from_amount):
+    binance_coin_prices = get_binance_prices()
+    BTC_exchange = CoinExchange("BTC",
+                                "Bitcoin",
+                                "binance",
+                                binance_coin_prices["BTC"],
+                                0.1,
+                                0.0005)
+    ETH_exchange = CoinExchange("ETH",
+                                "Ethereum",
+                                "binance",
+                                binance_coin_prices["ETH"],
+                                0.1,
+                                0.013)
+    XRP_exchange = CoinExchange("XRP",
+                                "XRP",
+                                "binance",
+                                binance_coin_prices["XRP"],
+                                0.1,
+                                0.25)
+    LTC_exchange = CoinExchange("LTC",
+                                "Litecoin",
+                                "binance",
+                                binance_coin_prices["LTC"],
+                                0.1,
+                                0.001)
+
+    return [
+        {
+            'to_symbol': BTC_exchange.coin_symbol,
+            'to_name': BTC_exchange.coin_name,
+            'to_amount': BTC_exchange.retrieve_coin_from_dollar(from_amount)
+        },
+        {
+            'to_symbol': ETH_exchange.coin_symbol,
+            'to_name': ETH_exchange.coin_name,
+            'to_amount': ETH_exchange.retrieve_coin_from_dollar(from_amount)
+        },
+        {
+            'to_symbol': XRP_exchange.coin_symbol,
+            'to_name': XRP_exchange.coin_name,
+            'to_amount': XRP_exchange.retrieve_coin_from_dollar(from_amount)
+        },
+        {
+            'to_symbol': LTC_exchange.coin_symbol,
+            'to_name': LTC_exchange.coin_name,
+            'to_amount': LTC_exchange.retrieve_coin_from_dollar(from_amount)
+        },
+    ]
+
 
 if __name__ == "__main__":
     main()
