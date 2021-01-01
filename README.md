@@ -32,10 +32,11 @@ pip install -r requirements.txt
 ```
 
 ## Run Code
+Currently only converts USD to NGN from Binance.US to Luno. You can set the USD value in the main method.
 
-Details coming soon
-
-
+```bash
+python calc_rate.py
+```
 
 ## Tear down
 
