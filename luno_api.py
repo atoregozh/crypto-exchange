@@ -1,6 +1,7 @@
 from luno_python.client import Client
 import configparser
-
+import datetime
+import time
 
 
 def run_luno():
@@ -13,6 +14,15 @@ def run_luno():
 
     try:
         res = c.get_ticker(pair='XBTZAR')
+        print(res)
+        print(datetime.datetime.utcfromtimestamp(res['timestamp'] / 1000))
+
+        time.sleep(0.5)
+        res = c.get_fee_info('XBTNGN')
+        print(res)
+
+        time.sleep(0.5)
+        res = c.get_tickers()
         print(res)
     except Exception as e:
         print(e)
