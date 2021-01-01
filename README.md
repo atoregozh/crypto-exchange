@@ -12,10 +12,6 @@ cd crypto-exchange/
 and paste the contents of [this file](https://docs.google.com/document/d/1JCUCMkh4PxpWQzD2Erv6cWCFv2-CgEwqS82XpqsHDBA/edit). 
 This file gets skipped in the .gitignore. This ensures we don't upload API keys or passwords unto github.
 
-# Luno READ API credentials from Kesiena's account
-luno_key_id = grk2h4dr99mhm
-luno_secret = Xy_LPW_vvTXm9sjAHNH4fXX4WWErJcgLMqtcFCVcXxQ
-
 * Install Python 3 & Pip 3:
 ```bash
 brew install python3

@@ -2,7 +2,7 @@ from luno_python.client import Client
 
 
 def run_luno():
-    c = Client(api_key_id="grk2h4dr99mhm", api_key_secret="Xy_LPW_vvTXm9sjAHNH4fXX4WWErJcgLMqtcFCVcXxQ")
+    c = Client(api_key_id="", api_key_secret="")
 
     try:
         res = c.get_ticker(pair='XBTZAR')
